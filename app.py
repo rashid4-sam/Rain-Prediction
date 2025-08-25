@@ -148,6 +148,7 @@ def predict():
 		date = request.form['date']
 		day = float(pd.to_datetime(date, format="%Y-%m-%d").day)
 		month = float(pd.to_datetime(date, format="%Y-%m-%d").month)
+		year = float(pd.to_datetime(date, format="%Y-%m-%d").year)
 		# MinTemp
 		minTemp = float(request.form['mintemp'])
 		# MaxTemp
@@ -194,7 +195,7 @@ def predict():
 		input_lst = [location , minTemp , maxTemp , rainfall , evaporation , sunshine ,
 					 windGustDir , windGustSpeed , winddDir9am , winddDir3pm , windSpeed9am , windSpeed3pm ,
 					 humidity9am , humidity3pm , pressure9am , pressure3pm , cloud9am , cloud3pm , temp9am , temp3pm ,
-					 rainToday , month , day]
+					 rainToday , month , day , year]
 		pred = model.predict(input_lst)
 		output = pred
 		if output == 0:
@@ -204,4 +205,5 @@ def predict():
 	return render_template("predictor.html")
 
 if __name__=='__main__':
+
 	app.run(debug=True)
