@@ -29,6 +29,12 @@ In addition to predicting whether it will rain tomorrow, Rainy Mind also include
 * Different types of models were tried like catboost, random forest, logistic regression, xgboost, support vector machines, knn, naive bayes.
 * Out of these catboost, random forest and support vector machines were top 3
 * The conclusion were made using classification metrics. roc curve and auc score
+# Model Creation For Time Series Model:
+* A separate Time-Series forecasting model was implemented to predict rainfall based on user location and selected date.
+* The model analyzes historical weather patterns to generate forward predictions, going beyond simple next-day classification.
+  
+
+
 
 
 
